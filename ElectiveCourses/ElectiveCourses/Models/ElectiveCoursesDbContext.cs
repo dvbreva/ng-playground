@@ -8,5 +8,7 @@ namespace ElectiveCourses.Models
         {
 
         }
+
+        public DbSet<ElectiveCourse> ElectiveCourses { get; set; }
     }
 }
