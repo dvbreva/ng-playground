@@ -1,1 +1,51 @@
-<p>course-detail works!</p>
+<form #form="ngForm" autocomplete="off">
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                        <i class="fas fa-align-justify"></i>
+                </div>
+            </div>
+            <input name="Name" #Name="ngModel" [(ngModel)]="service.Name" class="form-control" placeholder="Course Name" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text bg-white">
+                            <i class="fas fa-align-justify"></i>
+                    </div>
+                </div>
+                <input name="Description" #Name="ngModel" [(ngModel)]="service.Description" class="form-control" placeholder="Course Description" required>
+            </div>
+    </div>
+
+    <div class="row">
+    <div class="form-group col-md-6">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text bg-white">
+                            <i class="fas fa-user-friends"></i>
+                    </div>
+                </div>
+                <input name="Capacity" #Name="ngModel" [(ngModel)]="service.Capacity" class="form-control" placeholder="Capacity" required maxlength="2"> 
+            </div>
+    </div>
+
+    <div class="form-group col-md-6">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text bg-white">
+                            <i class="far fa-clock"></i>
+                    </div>
+                </div>
+                <input name="Deadline" #Name="ngModel" [(ngModel)]="service.Deadline" class="form-control" placeholder="Course Deadline" required>
+            </div>
+    </div>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-light btn-lg btn-block" type="submit">Submit course</button>
+    </div>
+</form>
