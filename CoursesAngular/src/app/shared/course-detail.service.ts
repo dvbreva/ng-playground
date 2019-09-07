@@ -7,11 +7,11 @@ import { HttpClient } from "@angular/common/http";
 })
 export class CourseDetailService {
   formData:CourseDetail;
-  readonly rootUrl = 'http://localhost:60597/api/';
+  readonly rootUrl = 'http://localhost:60597/api';
 
   constructor(private http:HttpClient) { }
 
   postElectiveCourse(formData:CourseDetail){
-  return this.http.post(this.rootUrl+'/CourseDetail',formData);
+  return this.http.post(this.rootUrl+'/ElectiveCourses',formData);
   }
 }

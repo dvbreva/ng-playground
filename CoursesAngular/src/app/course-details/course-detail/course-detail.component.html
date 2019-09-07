@@ -1,4 +1,5 @@
 <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <input type="hidden" name="Id" [value]="service.formData.Id">
     <div class="form-group">
         <div class="input-group">
             <div class="input-group-prepend">
@@ -6,7 +7,7 @@
                         <i class="fas fa-align-justify"></i>
                 </div>
             </div>
-            <input name="Name" #Name="ngModel" [(ngModel)]="service.Name" class="form-control" placeholder="Course Name" required>
+            <input name="Name" #Name="ngModel" [(ngModel)]="service.formData.Name" class="form-control" placeholder="Course Name" required>
         </div>
     </div>
 
@@ -17,7 +18,7 @@
                             <i class="fas fa-align-justify"></i>
                     </div>
                 </div>
-                <input name="Description" #Name="ngModel" [(ngModel)]="service.Description" class="form-control" placeholder="Course Description" required>
+                <input name="Description" #Name="ngModel" [(ngModel)]="service.formData.Description" class="form-control" placeholder="Course Description" required>
             </div>
     </div>
 
@@ -29,7 +30,7 @@
                             <i class="fas fa-user-friends"></i>
                     </div>
                 </div>
-                <input name="Capacity" #Name="ngModel" [(ngModel)]="service.Capacity" class="form-control" placeholder="Capacity" required maxlength="2"> 
+                <input name="Capacity" #Name="ngModel" [(ngModel)]="service.formData.Capacity" class="form-control" placeholder="Capacity" required maxlength="2"> 
             </div>
     </div>
 
@@ -40,7 +41,7 @@
                             <i class="far fa-clock"></i>
                     </div>
                 </div>
-                <input name="Deadline" #Name="ngModel" [(ngModel)]="service.Deadline" class="form-control" placeholder="Course Deadline" required>
+                <input name="Deadline" #Name="ngModel" [(ngModel)]="service.formData.Deadline" class="form-control" placeholder="Course Deadline" required>
             </div>
     </div>
     </div>
