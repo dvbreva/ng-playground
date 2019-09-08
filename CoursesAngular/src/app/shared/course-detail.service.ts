@@ -8,10 +8,17 @@ import { HttpClient } from "@angular/common/http";
 export class CourseDetailService {
   formData:CourseDetail;
   readonly rootUrl = 'http://localhost:60597/api';
+  list : CourseDetail[];
 
   constructor(private http:HttpClient) { }
 
   postElectiveCourse(formData:CourseDetail){
   return this.http.post(this.rootUrl+'/ElectiveCourses',formData);
+  }
+
+  refreshList(){
+    this.http.get(this.rootUrl + '/ElectiveCourses')
+    .toPromise()
+    .then(res => this.list = res as CourseDetail[]);
   }
 }
