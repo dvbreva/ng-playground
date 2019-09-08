@@ -16,7 +16,7 @@ export class CourseDetailListComponent implements OnInit {
   }
 
   populateForm(cd:CourseDetail){
-    this.service.formData = cd;
+    this.service.formData = Object.assign({},cd);
 
   }
 }
