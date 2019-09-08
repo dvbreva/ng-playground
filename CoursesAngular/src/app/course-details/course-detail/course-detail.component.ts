@@ -31,14 +31,39 @@ export class CourseDetailComponent implements OnInit {
     }
 
   onSubmit(form:NgForm){
-    this.service.postElectiveCourse(form.value).subscribe(
+    if(this.service.formData.Id == 0){
+      this.insertRecord(form);
+    }
+    else {
+      this.updateRecord(form);
+    }
+    
+  }
+
+  insertRecord(form:NgForm){
+    this.service.postElectiveCourse().subscribe(
       res => {
         this.resetForm(form);
         this.toastr.success('Submitted successfully','Payment Detail Register');
+        this.service.refreshList();
       },
       err => {
         console.log(err);
       }
     )
   }
+
+  updateRecord(form:NgForm){
+    this.service.putElectiveCourse().subscribe(
+      res => {
+        this.resetForm(form);
+        this.toastr.info('Submitted successfully','Payment Detail Register');
+        this.service.refreshList();
+      },
+      err => {
+        console.log(err);
+      }
+    )
+  }
+
 }

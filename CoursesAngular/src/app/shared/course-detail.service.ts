@@ -12,8 +12,12 @@ export class CourseDetailService {
 
   constructor(private http:HttpClient) { }
 
-  postElectiveCourse(formData:CourseDetail){
-  return this.http.post(this.rootUrl+'/ElectiveCourses',formData);
+  postElectiveCourse(){
+  return this.http.post(this.rootUrl + '/ElectiveCourses', this.formData);
+  }
+
+  putElectiveCourse(){
+  return this.http.put(this.rootUrl + '/ElectiveCourses/' + this.formData.Id, this.formData);
   }
 
   refreshList(){
