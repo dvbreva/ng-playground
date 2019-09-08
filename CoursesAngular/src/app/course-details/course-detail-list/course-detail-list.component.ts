@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseDetailService } from 'src/app/shared/course-detail.service';
 import { CourseDetail } from 'src/app/shared/course-detail.model';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-course-detail-list',
@@ -9,7 +10,8 @@ import { CourseDetail } from 'src/app/shared/course-detail.model';
 })
 export class CourseDetailListComponent implements OnInit {
 
-  constructor(private service: CourseDetailService) { }
+  constructor(private service: CourseDetailService,
+    private toastr: ToastrService) { }
 
   ngOnInit() {
     this.service.refreshList();
@@ -17,6 +19,18 @@ export class CourseDetailListComponent implements OnInit {
 
   populateForm(cd:CourseDetail){
     this.service.formData = Object.assign({},cd);
+  }
 
+  onDelete(Id){
+    if(confirm('Are you sure?')){
+      this.service.deleteElectiveCourse(Id)
+      .subscribe(res => {
+        this.service.refreshList();
+        this.toastr.warning('Deleted successfully','Elective courses register');
+      },
+        err => {
+          console.log(err);
+        })
+    }
   }
 }

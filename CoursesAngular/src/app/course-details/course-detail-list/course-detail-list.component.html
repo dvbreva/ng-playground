@@ -1,12 +1,18 @@
 <table class="table table-hover">
+    <thead class="thead-dark">
     <th>Name</th>
     <th>Description</th>
     <th>Capacity</th>
     <th>Deadline</th>
+    <th></th>
+</thead>
+<tbody> 
     <tr *ngFor="let cd of service.list">
-        <td (click)="populateForm(cd)">{{cd.Name}}</td>
-        <td (click)="populateForm(cd)">{{cd.Description}}</td>
-        <td (click)="populateForm(cd)">{{cd.Capacity}}</td>
-        <td (click)="populateForm(cd)">{{cd.Deadline}}</td>
+    <td (click)="populateForm(cd)">{{cd.Name}}</td>
+    <td (click)="populateForm(cd)">{{cd.Description}}</td>
+    <td (click)="populateForm(cd)">{{cd.Capacity}}</td>
+    <td (click)="populateForm(cd)">{{cd.Deadline}}</td>
+    <td><i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(cd.Id)"></i></td>
     </tr>
+</tbody>
 </table>

@@ -44,7 +44,7 @@ export class CourseDetailComponent implements OnInit {
     this.service.postElectiveCourse().subscribe(
       res => {
         this.resetForm(form);
-        this.toastr.success('Submitted successfully','Payment Detail Register');
+        this.toastr.success('Submitted successfully','Elective Courses Register');
         this.service.refreshList();
       },
       err => {
@@ -57,7 +57,7 @@ export class CourseDetailComponent implements OnInit {
     this.service.putElectiveCourse().subscribe(
       res => {
         this.resetForm(form);
-        this.toastr.info('Submitted successfully','Payment Detail Register');
+        this.toastr.info('Submitted successfully','Elective Courses Register');
         this.service.refreshList();
       },
       err => {

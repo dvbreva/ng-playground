@@ -13,11 +13,15 @@ export class CourseDetailService {
   constructor(private http:HttpClient) { }
 
   postElectiveCourse(){
-  return this.http.post(this.rootUrl + '/ElectiveCourses', this.formData);
+    return this.http.post(this.rootUrl + '/ElectiveCourses', this.formData);
   }
 
   putElectiveCourse(){
-  return this.http.put(this.rootUrl + '/ElectiveCourses/' + this.formData.Id, this.formData);
+    return this.http.put(this.rootUrl + '/ElectiveCourses/' + this.formData.Id, this.formData);
+  }
+
+  deleteElectiveCourse(id){
+    return this.http.delete(this.rootUrl + '/ElectiveCourses/' + id);
   }
 
   refreshList(){
