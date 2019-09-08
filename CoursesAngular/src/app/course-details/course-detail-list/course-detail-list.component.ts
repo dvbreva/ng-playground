@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseDetailService } from 'src/app/shared/course-detail.service';
+import { CourseDetail } from 'src/app/shared/course-detail.model';
 
 @Component({
   selector: 'app-course-detail-list',
@@ -14,4 +15,8 @@ export class CourseDetailListComponent implements OnInit {
     this.service.refreshList();
   }
 
+  populateForm(cd:CourseDetail){
+    this.service.formData = cd;
+
+  }
 }

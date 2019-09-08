@@ -3,10 +3,10 @@
     <th>Description</th>
     <th>Capacity</th>
     <th>Deadline</th>
-    <tr *ngFor="let od of service.list">
-        <td>{{od.Name}}</td>
-        <td>{{od.Description}}</td>
-        <td>{{od.Capacity}}</td>
-        <td>{{od.Deadline}}</td>
+    <tr *ngFor="let cd of service.list">
+        <td (click)="populateForm(cd)">{{cd.Name}}</td>
+        <td (click)="populateForm(cd)">{{cd.Description}}</td>
+        <td (click)="populateForm(cd)">{{cd.Capacity}}</td>
+        <td (click)="populateForm(cd)">{{cd.Deadline}}</td>
     </tr>
 </table>
