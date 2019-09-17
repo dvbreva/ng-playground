@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">DMessenger</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class='nav-item nav-link' [routerLink]="['/welcome']">Home</a>
+            <a class="nav-item nav-link" [routerLink]="['/messenger']">Messenger</a>
+            <a class="nav-item nav-link" [routerLink]="['/about']">About</a>
+          </div>
+    </div>
+</nav>
+
+<div class="jumbotron text-center">
+        <h1>Welcome to DMessenger</h1>
+        <p>Messenger-like-app to chat with your friends</p> 
+      </div>
+        
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h3>Ready to begin?</h3>
+            <p>Insert your username to start chatting..</p>
+
+            <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)"> 
+                <input type="hidden" name="Id" [value]="service.formData.Id">
+
+                <div class="form-group">
+                    <input name="Username" #Name="ngModel" [(ngModel)]="service.formData.Username" class="form-control" placeholder="f.e 'Mr.Mysterious'" required>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-light btn-lg btn-block" type="submit" [disabled]="form.invalid">Start</button>
+                </div>
+            </form> 
+
+          </div>
+    </div>
+</div>
+      
