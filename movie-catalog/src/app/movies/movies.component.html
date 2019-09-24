@@ -11,14 +11,13 @@
   occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
         <br>
-        <br>
         <hr>
       </div>
 
       <div class="row">
 
-        <div class="col-md-3" *ngFor="let movie of popularMovies"> 
-          <app-movie></app-movie>
+        <div class="col-md-3" *ngFor="let movie of popular"> 
+            <app-movie [movie]="movie"></app-movie>
         </div>
 
       </div>

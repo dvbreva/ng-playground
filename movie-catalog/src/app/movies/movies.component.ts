@@ -17,7 +17,7 @@ export class MoviesComponent implements OnInit {
   ngOnInit() {
 
     this.movieService.getPopularMovies().subscribe(data => {
-      this.popular = data['results'];
+      this.popular = data['results'].slice(0,8);
       console.log(data);
     });
   }
