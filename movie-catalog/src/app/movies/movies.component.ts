@@ -11,6 +11,7 @@ import Movie from '../models/movie.model';
 export class MoviesComponent implements OnInit {
   popular: Array<Movie>;
   theaters: Array<Movie>;
+  message: null;
 
   constructor(private movieService: MovieService) { }
 
@@ -23,6 +24,11 @@ export class MoviesComponent implements OnInit {
     this.movieService.getTheaters().subscribe(data => {
       this.theaters = data['results'].slice(8,16);
     })
+  }
+
+  fromChild(event){
+    console.log(event);
+    this.message = event;
   }
 
 }

@@ -9,6 +9,6 @@
           <p class="card-text">Release date: {{movie.release_date}}</p>
         </div>
         <div class="card-body">
-          <a href="#" class="btn btn-dark">Details</a>
+          <a href="#" class="btn btn-dark" [id]="movie.id" (click)="clickButton()">Details</a>
     </div>
 </div> 
