@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const API_KEY = '&api_key=659db8b0d483e766791f63ffd28afad6';
+const IN_THEATHERS = 'https://api.themoviedb.org/3/discover/movie/'
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class MovieService {
     return this.http.get<Movie[]>(BASE_URL + this.popularEndpoint + API_KEY);
   }
 
-  getTheaters(){
+  getTheaters() : Observable<Array<Movie>>{
     return this.http.get<Movie[]>(BASE_URL + this.theathersEndpoint + API_KEY)
   }
 }

@@ -18,8 +18,11 @@ export class MoviesComponent implements OnInit {
 
     this.movieService.getPopularMovies().subscribe(data => {
       this.popular = data['results'].slice(0,8);
-      console.log(data);
     });
+
+    this.movieService.getTheaters().subscribe(data => {
+      this.theaters = data['results'].slice(8,16);
+    })
   }
-  //popular$ = this.movieService.getPopularMovies();
+
 }
