@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
-import { Subscription } from 'rxjs';
+import { Subscription, from } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 
 import { Product } from '../product';
@@ -38,11 +38,9 @@ export class ProductListComponent implements OnInit, OnDestroy {
     });
 
     //TODO: unsubscribe
-    this.store.pipe(select('products')).subscribe(
-      products => {
-        if(products){
-          this.displayCode = products.showProductCode;
-        }
+    this.store.pipe(select(fromProduct.getShowProductCode)).subscribe(
+      showProductCode => {
+          this.displayCode = showProductCode;
       });
   }
 
