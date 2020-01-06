@@ -8,14 +8,14 @@ import Wish from './wish.model';
 })
 export class WishService {
     private ApiURL: string = 'https://localhost:44314/api/wishes';
-    
+
     constructor(private httpClient: HttpClient) { }
 
     getWishes(): Observable<Wish[]> {
         return this.httpClient.get<Wish[]>(this.ApiURL);
     }
 
-    addWish(payload: Wish): Observable<Wish> {
+    createWishes(payload: Wish): Observable<Wish> {
         return this.httpClient.post<Wish>(this.ApiURL, JSON.stringify(payload), {
             headers: { 'Content-Type': 'application/json' }
         });

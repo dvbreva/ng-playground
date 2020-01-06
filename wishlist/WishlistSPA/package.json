@@ -21,9 +21,12 @@
     "@angular/router": "~8.2.4",
     "@ngrx/effects": "^8.6.0",
     "@ngrx/store": "^8.6.0",
+    "bootstrap": "^4.4.1",
     "bootstrap-sass": "^3.4.1",
+    "bootstrap-scss": "^4.4.1",
     "bootswatch": "^4.4.1",
     "bootswatch-sass": "^3.2.0",
+    "bootswatch-scss": "^3.2.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

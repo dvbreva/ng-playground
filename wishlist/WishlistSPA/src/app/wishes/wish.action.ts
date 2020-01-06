@@ -1,28 +1,28 @@
 import { createAction, props } from '@ngrx/store';
 import Wish from './wish.model';
 
-export const GetWishAction = createAction('[Wishes] - Get Wish');
+export const GetWishAction = createAction('Get Wish');
 
-export const AddWishAction = createAction(
-  '[Wishes] - Add Wish',
+export const CreateWishAction = createAction(
+  'Create Wish',
   props<Wish>()
 );
 
-export const BeginGetWishAction = createAction('[Wishes] - Begin Get Wish');
+export const BeginGetWishAction = createAction('Begin Get Wish');
 
 export const SuccessGetWishAction = createAction(
-  '[Wishes] - Success Get Wish',
+  'Success Get Wish',
   props<{ payload: Wish[] }>()
 );
 
-export const BeginAddWishAction = createAction(
-  '[Wishes] - Begin Add Wish',
+export const BeginCreateWishAction = createAction(
+  'Begin Create Wish',
   props<{ payload: Wish }>()
 );
 
-export const SuccessAddWishAction = createAction(
-  '[Wishes] - Success Add Wish',
+export const SuccessCreateWishAction = createAction(
+  'Success Create Wish',
   props<{ payload: Wish }>()
 );
 
-export const ErrorWishAction = createAction('[Wishes] - Error', props<Error>());
+export const ErrorWishAction = createAction('Error', props<Error>());

@@ -1,0 +1,21 @@
+.add-wish-container {
+  background: #efefbb; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #ffffff, #d6f4f8); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to top,
+    #ffffff,
+    #d6f4f8
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h3 {
+    padding: 20px;
+}
+
+.form-check-label {
+    margin-top: 10px;
+}
+
+.form-check-input {
+    margin-top: 15px;
+}
