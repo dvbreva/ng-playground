@@ -1,14 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 import { AppComponent } from './app.component';
 import { WishesComponent } from './wishes/component/wishes.component';
-import { StoreModule } from '@ngrx/store';
 import { WishReducer } from './wishes/wish.reducer';
-import { EffectsModule } from '@ngrx/effects';
-import { FormsModule } from '@angular/forms';
 import { WishEffects } from './wishes/wish.effect';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [

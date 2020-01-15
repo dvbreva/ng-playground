@@ -1,4 +1,5 @@
 import { createAction, props } from '@ngrx/store';
+
 import Wish from './wish.model';
 
 export const GetWishAction = createAction('Get Wish');

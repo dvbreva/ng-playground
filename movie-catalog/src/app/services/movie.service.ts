@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import Movie  from "../models/movie.model";
+
 import { Observable } from 'rxjs';
+
+import Movie  from "../models/movie.model";
 
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const API_KEY = '&api_key=659db8b0d483e766791f63ffd28afad6';
